@@ -6,12 +6,12 @@ import logoutLogo from "../assets/vector2.png";
 
 const Sidebar = () => {
   return (
-    <div className="flex h-screen min-w-[316px] w-[316px] p-14  border-r-[1px]  ">
+    <div className="flex h-screen min-w-[316px] min-h-[600px] w-[316px] p-14  border-r-[1px] relative">
       <div className="">
         <h2 className="font-bold text-xl mb-[82px]">Todo-app</h2>
         <div className="flex-col ">
-          <div className="flex ">
-            <img className="mr-4 mb-14" src={homeLogo} />
+          <div className="flex  mb-14">
+            <img className="mr-4" src={homeLogo} />
             <h4>Dashboard</h4>
           </div>
 
@@ -20,9 +20,9 @@ const Sidebar = () => {
             <h4>Overview</h4>
           </div>
         </div>
-        <div className="">
-          <div className="flex ">
-            <img className="mr-4 mb-14" src={settingsLogo} />
+        <div className="absolute bottom-24">
+          <div className="flex  mb-14">
+            <img className="mr-4" src={settingsLogo} />
             <h4>Settings</h4>
           </div>
 
