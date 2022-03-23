@@ -39,7 +39,6 @@ const AddTodo = () => {
             </form>
         </div>
     </div>
-</div> 
   )
 }
 
