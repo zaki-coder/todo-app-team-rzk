@@ -1,16 +1,18 @@
-import Sidebar from "./components/Sidebar";
-import TodoContainer from "./components/TodoContainer";
-import Header from "./components/Header";
+import Register from "./components/Register";
+import Login from "./components/Login";
+
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="flex justify-evenly max-w-[1300px] mx-auto">
-        <Sidebar />
-      <div className="flex-col">
-        <Header />
-        <TodoContainer />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
