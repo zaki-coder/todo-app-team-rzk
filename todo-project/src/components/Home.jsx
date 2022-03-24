@@ -5,7 +5,7 @@ import Header from "./Header";
 
 const Home = () => {
   return (
-    <div className="flex justify-evenly max-w-[1300px] mx-auto">
+    <div className="flex justify-evenly w-[1300px] mx-auto border-4 rounded-3xl overflow-hidden">
         <Sidebar />
         <div className="flex-col">
           <Header />
