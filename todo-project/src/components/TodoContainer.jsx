@@ -1,28 +1,37 @@
 import React from 'react'
 import Todo from '../components/Todo';
 
-const TodoContainer = () => {
-  return (
-    <div className="flex justify-around gap-x-3 sm:w-full lg:max-w-[955px] lg:mx-auto my-4">
-      <Todo
-        title="To do"
-        amount="2"
-        name="Design"
-        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, totam!"
-      />
-      <Todo
-        title="In Progress"
-        amount="1"
-        name="Development"
-        description="We need 2 different concepts for a software page in our program."
-      />
 
-      <Todo
-        title="Completed"
-        amount="0"
-        name="Logo redesign"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, sed?."
-      />
+const TodoContainer = () => {
+  // const [todos, setTodos] = useState([]);
+
+  // const persistDB = (newTodo) => {
+  //   axios.post("http://localhost:4000/todos", newTodo);
+  // }
+
+  // useEffect(() => {
+  //   async function getTodos() {
+  //     const res = await axios.get("http://localhost:4000/todos", {
+  //       withCredentials: true,
+  //     });
+  //     setTodos(res.data);
+  //   }
+  //   getTodos();
+  // }, []);
+
+  // const addTodo = (e) => {
+  //   e.preventDefault();
+  //   if (!todoText) return;
+  //   const newTodo = { id: uuidv4(), checked: false, text: todoText };
+  //   const newTodos = [...todos, newTodo];
+  //   setTodos(newTodos);
+  //   setTodoText("");
+  //   persistDB(newTodos);
+  // };
+    
+  return (
+    <div className="flex justify-around gap-x-3 h-screen sm:w-full lg:max-w-[955px] lg:mx-auto my-4 overflow:hidden">
+      <Todo title="To do" />
     </div>
   );
 }

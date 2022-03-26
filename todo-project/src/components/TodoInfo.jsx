@@ -8,9 +8,7 @@ const TodoInfo = ({name, description}) => {
         <input type="checkbox" name="name" className="mr-2 w-4 h-4" />
         <h4 className="text-lg font-semibold">{name}</h4>
       </div>
-      <p className="my-4 text-gray-500">
-        {description}
-      </p>
+      <p className="my-4 text-gray-500">{description}</p>
     </div>
   );
 }

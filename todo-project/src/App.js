@@ -1,10 +1,10 @@
-import Register from "./components/Register";
-import Login from "./components/Login";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Home from "./components/Home";
-import AddTodo from "./components/AddTodo";
+import Home from "./pages/Home";
+import AddTodo from "./pages/AddTodo";
 import UserContext from "./context/UserContext";
 
 

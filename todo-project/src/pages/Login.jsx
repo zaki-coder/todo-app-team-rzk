@@ -10,7 +10,7 @@ const Login = () => {
 
   const user = useContext(UserContext);
 
-  function loginUser(e) {
+  function login(e) {
     e.preventDefault();
 
     const data = { email, password };
@@ -37,7 +37,7 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
         <h3 className="text-2xl font-bold text-center">Login</h3>
-        <form action="" onSubmit={(e) => loginUser(e)}>
+        <form action="" onSubmit={(e) => login(e)}>
           {loginError && <div className="text-red-900 text-sm text-center mt-2">WRONG EMAIL OR PASSWORD!</div>}
           <div className="mt-4">
             <div className="mt-4">

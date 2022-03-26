@@ -6,7 +6,7 @@ import logoutLogo from "../assets/vector2.png";
 
 const Sidebar = () => {
   return (
-    <div className="flex h-screen min-h-[600px] min-w-[316px] w-[316px] p-14  border-r-[1px]  ">
+    <div className="flex h-screen min-h-[600px] min-w-[316px] w-[316px] p-14 border-r-[1px]">
       <div className="relative">
         <h2 className="font-bold text-xl mb-[82px]">Todo-app</h2>
         <div className="flex-col ">
