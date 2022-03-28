@@ -32,6 +32,8 @@ const TodoContainer = () => {
   return (
     <div className="flex justify-around gap-x-3 h-screen sm:w-full lg:max-w-[955px] lg:mx-auto my-4 overflow:hidden">
       <Todo title="To do" />
+      <Todo title="In Progress" />
+      <Todo title="Completed" />
     </div>
   );
 }

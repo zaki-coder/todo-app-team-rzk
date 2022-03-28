@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-// import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import TodoHeader from "./TodoHeader";
+import TodoHeader from "../pages/Overview";
 
-const Todo = ({ title }) => {
+const Overview = ({ title }) => {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoDesc, setTodoDesc] = useState("");
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState("completed");
-  const [, updateTodosItems] = useState(todos);
+  const [todosItems, updateTodosItems] = useState(todos);
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
@@ -28,29 +28,6 @@ const Todo = ({ title }) => {
       withCredentials: true,
     });
   };
-  
-
-  const toggleCheck = (id) => {
-    axios
-      .patch(`http://localhost:4000/todos/${id}`, { withCredentials: true })
-      .then((res) => {
-        setTodos(res.id);
-        alert("Todo updated");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-  const toggleTodo = (id) => {
-    const newTodoList = [...todos];
-    const todoItem = newTodoList.find((todo) => todo._id === id);
-    todoItem.completed = !todoItem.completed;
-    setTodos(newTodoList);
-    // persistDB(newTodoList);
-    toggleCheck(id);
-  };
-
-
 
   useEffect(() => {
     async function getTodos() {
@@ -76,11 +53,17 @@ const Todo = ({ title }) => {
     setTodoDesc("");
   };
 
-  
+  const toggleTodo = (id) => {
+    const newTodoList = [...todos];
+    const todoItem = newTodoList.find((todo) => todo._id === id);
+    todoItem.completed = !todoItem.completed;
+    setTodos(newTodoList);
+    persistDB(newTodoList);
+  };
 
   const getTodos = () => {
     return todos.filter((todo) =>
-      setFilter(filter === "completed" ? todo.completed : !todo.completed)
+      filter === "completed" ? todo.completed : !todo.completed
     );
   };
 
@@ -164,4 +147,4 @@ const Todo = ({ title }) => {
   );
 };
 
-export default Todo;
+export default Overview;

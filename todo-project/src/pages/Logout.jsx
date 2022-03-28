@@ -3,7 +3,7 @@ import axios from "axios";
 import UserContext from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Logout = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(false);
@@ -25,17 +25,20 @@ const Login = () => {
       .catch(() => {
         setLoginError(true);
       });
-      navigate("/");
+    navigate("/");
   }
   let navigate = useNavigate();
-
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
         <h3 className="text-2xl font-bold text-center">Login</h3>
         <form action="" onSubmit={(e) => login(e)}>
-          {loginError && <div className="text-red-900 text-sm text-center mt-2">WRONG EMAIL OR PASSWORD!</div>}
+          {loginError && (
+            <div className="text-red-900 text-sm text-center mt-2">
+              WRONG EMAIL OR PASSWORD!
+            </div>
+          )}
           <div className="mt-4">
             <div className="mt-4">
               <label className="block" htmlFor="email">
@@ -79,4 +82,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Logout;

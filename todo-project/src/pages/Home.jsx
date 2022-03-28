@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="flex justify-evenly max-w-[1320px] mx-auto border-4 rounded-3xl overflow-x-hidden max-h-screen ">
       <Sidebar />
-      <div className="flex-col overflow-y-scroll">
+      <div className="flex-col overflow-y-scroll scrollbar-hide">
         <Header />
         <TodoContainer />
       </div>
